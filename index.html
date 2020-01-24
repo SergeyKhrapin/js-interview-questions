@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Frontend interview questions</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<nav class="nav">
+		<a href="#" data-block="js-questions" class="active">JS questions</a>
+		<a href="#" data-block="tech-interview_astound-promotion">Tech interview - Astound promotion (November 2018)</a>
+		<a href="#" data-block="tech-interview-companies">Tech interview questions</a>
+		<a href="#" data-block="my-weaknesses">My weaknesses</a>
+		<a href="#" data-block="english-questions">Common interview questions in English</a>
+	</nav>
+
+	<ol class="questions-list js-questions" data-id="js-questions">
+		<li>
+			<details>
+				<summary>How can we transform an array to string? (5 ways)</summary>
+				<b>
+					1) array.join(',');<br>
+					2) array.toString();<br>
+					3) String(array);<br>
+					4) array + "";
+<pre style="color:green">
+5) (function() {
+	var str = '';
+	arr.forEach(function(el) {
+		str += el;
+	})
+}())
+</pre>
+				</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What is the result of the statement below?</br>
+					obj + 'string'
+					<pre>
+var obj = {
+	valueOf: function() {
+		return 1;
+	},
+	toString: function() {
+		return 2;
+	}
+};
+					</pre>
+				</summary>
+				<b>"1string"</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<pre>
+let obj = {
+    '1': 0,
+      1: 1,
+      0: 2,
+      prop: 7
+};
+
+console.log(obj['1']);
+					</pre>
+				</summary>
+				<b>1</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<pre>
+var value = 0;
+
+function f() {
+    if (1) {
+        value = true;
+    } else {
+        var value = false;
+    }
+
+    console.log(value);
+}
+
+f();
+console.log(value);
+					</pre>
+				</summary>
+				<b>true<br>0</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<pre>
+var arr = [];
+
+arr[0] = 0;
+arr[1] = 1;
+arr.element = 2;
+
+console.log(arr.length);
+arr.pop();
+console.log(arr);
+					</pre>
+				</summary>
+				<b>2</b><br>
+				<b>[0, element: 2]</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<pre>
+let a, b, c = [1, 2, 3, 4, 5];
+
+console.log(a, c);
+					</pre>
+				</summary>
+				<b>undefined [1, 2, 3, 4, 5]</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<pre>
+'5' + - ' ' + - + - '2'
+					</pre>
+				</summary>
+				<b>"502"</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<pre>
+var obj1 = {},
+    obj2 = { bar: 'test' }; 
+
+console.log(obj1 && obj2.bar);
+					</pre>
+				</summary>
+				<b>'test'</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console? <span class="caution">Unresolved</span>
+					<pre>
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { console.log(i); }, i * 1000 );
+}
+					</pre>
+				</summary>
+				<b>55555</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<span class="caution">Caution! Next question contains a tip to right answer</span>
+					<pre>
+let user = {
+  firstName: "Вася",
+  sayHi: function() {
+    console.log(this.firstName);
+  }
+};
+
+setTimeout(user.sayHi, 1000);
+					</pre>
+				</summary>
+				<b>undefined</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>
+					What will be displayed in the console?
+					<pre>
+let user = {
+  firstName: "Вася",
+  sayHi: function() {
+    alert( this.firstName );
+  }
+};
+
+function func() {
+    user.sayHi();
+};
+
+user = 5;
+
+setTimeout(func, 1000);
+					</pre>
+				</summary>
+				<b>Uncaught TypeError</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>What will be displayed in the console?
+					<pre>
+var str = "cat";
+str[2] === "t"; // true
+str[3] = "s";
+console.log(str);
+console.log(str[3]);
+					</pre>
+				</summary>
+				<b>
+					"cat"<br>
+					undefined
+				</b>
+			</details>
+		</li>
+
+		<li>
+			<details>
+				<summary>What will be displayed in the console?
+					<pre>
+let arr = [3, 5, 7];
+let res = arr.reduce(function(prev, cur) {
+console.log(prev);
+console.log(cur);
+return prev;
+});
+					</pre>
+				</summary>
+				<b>
+					3<br>
+					5<br>
+					3<br>
+					7<br>
+				</b>
+			</details>
+		</li>
+	</ol>
+
+	<ol class="questions-list tech-interview-1" data-id="tech-interview-1">
+		<li>
+			<details>
+				<summary>How can we transform an array to string? (two ways) 1</summary>
+				<b>
+					arr.join(',');<br>
+					arr.toString();
+				</b>
+			</details>
+		</li>
+	</ol>
+
+	<ol class="questions-list tech-interview_astound-promotion" data-id="tech-interview_astound-promotion">
+		<li>
+			<details>
+				<summary>How can we make elements (for example, div) more semantic? (except using HTML5 tags)</summary>
+				<b>
+					role attributes
+				</b>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>
+					What will be background color of div element?
+					<pre>
+&lt;p>
+  &lt;div>block&lt;/div>
+&lt;/p>
+
+p {
+  background: red;
+}
+p > div {
+  background: green;
+}
+div {
+  background: blue;
+}
+					</pre>
+				</summary>
+				<b>blue</b>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>What will be background color of my-tag element?
+					<pre>
+&lt;my-tag class="my-tag">My custom tag&lt;/my-tag>
+
+.my-tag {
+  background: blue;
+}
+					</pre>
+				</summary>
+				<b>blue</b>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>How should classes be named properly according to BEM?</summary>
+				<b></b>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>What will be background color of p element?
+					<pre>
+&lt;p id="id1" class="class1 class2 class3 class4 class5 class6 class7 class8 class9 class10 class11">text&lt;/p>
+
+#id1 {
+  background: green;
+}
+.class1.class2.class3.class4.class5.class6.class7.class8.class9.class10.class11 {
+  background: red;
+}
+					</pre>
+				</summary>
+				<b>green</b>
+			</details>
+		</li>
+		li>details>(summary+b)
+	</ol>
+
+	<!-- Tech interview in other companies - START -->
+	<div class="questions-list tech-interview-companies" data-id="tech-interview-companies">
+		<h2>Luxoft (3/18/2019)</h2>
+		<ol>
+			<li>
+				<details>
+					<summary>What is the difference between &lt;div> and &lt;span>?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>How can we place div elements in the one row?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>How are @media queries written? What css-rule will be applied if we have two some media queries?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Please list the attributes of the &lt;input&gt; element.</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Please list the values of the 'type' attribute of the &lt;input&gt; element.</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is &lt;script&gt; tag? What attributes are allowed for this tag?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What are async/defer attributes? How do they work? What will be a behaviour if we have 4 scripts with async/defer attributes in the following order?<br>
+						async<br>
+						async<br>
+						defer<br>
+						defer
+					</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>The few simple questions about jQuery (addClass(), show(), fadeIn(), animate()).</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is 'this'? (to resolve the few simple tasks)</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>How can we set 'this' directly?</summary>
+					<b>
+						call<br>
+						apply<br>
+						bind
+					</b>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Are you able to write custom 'bind' method?</summary>
+					<b>
+						Yes<br>
+						https://github.com/SergeyKhrapin/custom-bind-method
+					</b>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is the 'closure'? (to resolve the few simple tasks)</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is the difference between let and const?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is the difference between e.preventDefault() and e.stopPropagation()?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>How to set an event handler to the element? How to remove this handler?</summary>
+					<b>
+						element.addEventListener(event, handler[, options]);<br>
+						element.removeEventListener(event, handler[, options]);
+					</b>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What HTTP methods do you know?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>How to submit a form using the POST method? Please write a code.</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Many questions about Promise.</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Do you know any alternative to Promise?</summary>
+					<b>
+						async<br>
+						await
+					</b>
+				</details>
+			</li>
+		</ol>
+		<h2>DataArt - general questions HTML, CSS, JS etc. (4/3/2019)</h2>
+		<ol>
+			<li>
+				<details>
+					<summary>How to increase a performance? (HTTP2 etc.)</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is the difference between Cookies and Local Storage?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What elements properties should not be animated? (hint: reflow/repaint)</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is your favourite features in ES6?</summary>
+				</details>
+			</li>
+		</ol>
+		<h2>EPAM -JS (4/4/2019)</h2>
+		I have answered on all questions! The interviewers were astonished!
+		<h2>Playtika (4/5/2019)</h2>
+		<ol>
+			<li>
+				<details>
+					<summary>Promise!!!</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Hoisting!</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>
+						Write a function that checks whether an array is sorted in ascending order. It should return true or false. What will be the time complexity of the algorithm. 
+<pre>
+function isArraySortedAscending(arr) {
+// your code
+}
+isArraySortedAscending([1, 2, 30, 50]); // true
+isArraySortedAscending([10, 1, 8, 50]); // false
+isArraySortedAscending([-Infinity, 2, 0]); // false
+</pre>
+					</summary>
+<pre>
+function isArraySortedAscending(arr) {
+	let arrLength = arr.length;
+	for (let i = 1; i < arrLength; i++) {
+		if (arr[i] < arr[i - 1]) {
+			return false;
+		}
+	}
+	return true;
+}
+</pre>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>
+						Write a function which extracts a file extension. (desire 1: don't use regexp; desire 2: use only split method)
+<pre>
+function extractFileExtension(path) {
+// your code
+}
+extractFileExtension(); // ''
+extractFileExtension(''); // ''
+extractFileExtension(null); // ''
+extractFileExtension('filename.ext'); // ext
+extractFileExtension('folder/filename.png'); // png
+extractFileExtension('folder/filename.png?logIn=true'); // png
+</pre>
+					</summary>
+<pre>
+function extractFileExtension(path) {
+	if (!path) { return ''; }
+
+	let pathArray = path.split('/');
+	let pathEnd = pathArray[pathArray.length - 1];
+
+	return pathEnd.includes('?') ? pathEnd.split('?')[0].split('.')[1] : pathEnd.split('.')[1];
+}
+</pre>
+				</details>
+			</li>
+		</ol>
+		<h2>DataArt - JS (4/5/2019)</h2>
+		<ol>
+			<li>
+				<details>
+					<summary>What data types exist in JS?<br><strong>The interviewer said that 'function' is a separate data type!!! LOL</strong></summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>Hoisting!</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is your favourite features in ES6?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is the key difference between function declaration and function expression?</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is the inheritance in JS? (OOP)</summary>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>What is 'this' into the arrow function?</summary>
+					'this' is taken from the closure.
+<pre>
+var obj = {a: 10};
+
+function fn() {
+	let foo = () => {
+		console.log(this);	
+	}
+	foo();
+}
+
+obj.method = fn;
+obj.method(); // object {a: 10, method: f}
+</pre>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>
+						What will be displayed in the console?
+<pre>
+var obj = {a: 1};
+(function(obj){
+	obj.a = 2;
+}());
+console.log(obj.a);
+</pre>
+					</summary>
+				</details>
+			</li>
+			<li>
+					<details>
+						<summary>
+							
+<pre>
+class A {
+}
+
+class B extends A {
+    constructor() {
+        super();
+        this.foo = 1;
+    
+    }
+    
+    
+    foo = 2;
+}
+
+B.prototype.foo = 2;
+
+const b = new B();
+
+console.dir(b); // what is the object tree (proto, prototype)
+
+console.log(b.foo); // 2 or 1
+
+
+
+function GetName(name) {
+    this.name = 'construct';
+}
+
+GetName.prototype.name = 'prototype'
+
+var user = new GetName('Vasya');
+
+user.name // 
+
+GetName.prototype.method = function() {
+}
+
+user.__proto__ = otherObj;
+
+</pre>
+					</summary>
+				</details>
+			</li>
+		</ol>
+	</div>
+	
+	<!-- Tech interview in other companies - END -->
+
+	<!-- My weaknesses - START -->
+	<div class="questions-list my-weaknesses" data-id="my-weaknesses">
+		<ol>
+			<li>JS practice</li>
+			<li>SASS functions</li>
+			<li>Gulp</li>
+			<li>Lazy loading</li>
+			<li>Images optimization</li>
+			<li>SEO (role attributes)</li>
+			<li>Accessibility</li>
+			<li>Microdata</li>
+			<li>Pre- and Postproccessing</li>
+		</ol>
+
+		<h3>Weaknesses (Luxoft interview)</h3>
+		<ol>
+			<li>How to submit a form using POST method.</li>
+			<li>Prototype, __proto__</li>
+			<li>...spread operator</li>
+			<li>Promise, 'then' chaining</li>
+			<li>async/await</li>
+		</ol>
+	</div>
+	
+	<!-- My weaknesses - END -->
+
+	<!-- English questions - START -->
+	<ol class="questions-list english-questions" data-id="english-questions">
+		<li>
+			<details>
+				<summary>Tell me a little about yourself.</summary>
+				I am a Frontend engineer. I have about 3 years of experience in softwear development. Mostly it is a client side development. In the very beginning of my IT career I have been working as a freelancer. For last one and half year I have worked at Astound. My first project was (sorry I cann't say project name according to NDA).. it was RefApp (Refferance application) that is a basic application for demonstration purposes which is a foundation for future sites. This app were based on Magento. My second and in the same time a current project is a well known american brand that has a many stores. We are using IBM WebSphere platform and many other interesting technologies. My main responsibility as a frontend developer is to maintain an existing UI functionality and to develop new features using JS and so on.
+			</details>
+		</li>		
+		<li>
+			<details>
+				<summary>Where do you see yourself five years from now?</summary>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>What are your strengths and weaknesses?</summary>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>What is your leadership style?</summary>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>Can you tell me about a time when you demonstrated... (a leadership/excellent customer service)?</summary>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>Tell me about a time you dealt with a challenging situation at work</summary>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>Why do you want this job?</summary>
+				First af all I would like to say I like my current company, I feel very comfortable in my Uzhgorod office and I get along with my colleagues. Вut despite this I wouldn't like to work at Astound until retirement. I want to work in a big company like EPAM. I believe in your company there are many opportunities - like using new technologies, many interesting projects and other conditions for self-improvement. Unfortunately, in Astound I have to use a pretty old technologies, and lately I feel I have stopped developing like a specialist. It's sad.
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>Why should we hire you?</summary>
+				I have enough experience in frontend development. I have been working on different projects, and I was using a different technologies. Even if I don't know some technology I am able to learn it in a short time. It's not a big deal for me. It's one of my important strengths. In my opinion first of all a good developer shouldn't know all existing technologies, programming languages, but he should be able to study this technology and have a desire to do this. I believe your company thinks so as well.
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>What was a most difficult in your project?</summary>
+				When we were implementing a new feature there were some difficulties. I was one of the couple of employees who was doing this. We were using ES6 standard while it has been never used in our project before. And the most difficulty wasn't a coding, it was easy enough. But an important aim was to create a correct architecture in order to have a good maintenance or be able to extend functionality easily if necessary. I beliave I've coped with this task. Of course, I wasn't able to consider all cases, especially when requirements are changed...
+			</details>
+		</li>
+	</ol>
+	<!-- English questions - END -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src='script.js'></script>
+
+</body>
+
+</html>

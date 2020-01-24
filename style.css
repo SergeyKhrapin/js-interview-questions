@@ -1,0 +1,41 @@
+.tech-interview_astound-promotion,
+.tech-interview-companies,
+.my-weaknesses,
+.english-questions {
+	display: none;
+}
+.nav a {
+	display: inline-block;
+	margin-right: 10px;
+	padding: 8px 16px;
+	border-radius: 4px;
+	background-color: lightgray;
+	font-size: 20px;
+	color: #000;
+	text-decoration: none;
+}
+.nav a.active {
+	background-color: gray;
+	color: lightblue;
+	font-weight: 600;
+}
+.questions-list li {
+	margin-bottom: 20px;
+    padding: 20px;
+    background-color: lightblue;
+    border-radius: 6px;
+}
+.questions-list summary {
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+.questions-list pre {
+	font-size: 14px;
+	color: blue;
+}
+.questions-list b {
+	color: green;
+}
+.caution {
+	color: red;
+}
