@@ -260,15 +260,19 @@ return prev;
 				</b>
 			</details>
 		</li>
-	</ol>
 
-	<ol class="questions-list tech-interview-1" data-id="tech-interview-1">
 		<li>
 			<details>
-				<summary>How can we transform an array to string? (two ways) 1</summary>
+				<summary>How can we set/change object's proto? (3 ways)
+					<pre>
+const obj = {a: 3};
+const objProto = {b: 5};
+					</pre>
+				</summary>
 				<b>
-					arr.join(',');<br>
-					arr.toString();
+					1. obj.__proto__ = objProto;<br>
+					2. Object.setPrototypeOf(obj, objProto);<br>
+					3. Object.create(objProto);
 				</b>
 			</details>
 		</li>
