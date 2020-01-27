@@ -36,7 +36,25 @@
 				</b>
 			</details>
 		</li>
-
+		<li>
+			<details>
+				<summary>How can we transform a string to an array?</summary>
+				<b>
+					1) str.split('');<br>
+					2) Array.from(str);<br>
+<pre style="color:green">
+3) const convertStringToArray = (str)=> {
+    const strLength = str.length;
+    let arr = [];
+    for (let i = 0; i < strLength; i++) {
+        arr[i] = str[i];
+    }
+    return arr;
+}
+</pre>
+				</b>
+			</details>
+		</li>
 		<li>
 			<details>
 				<summary>
@@ -273,6 +291,15 @@ const objProto = {b: 5};
 					1. obj.__proto__ = objProto;<br>
 					2. Object.setPrototypeOf(obj, objProto);<br>
 					3. Object.create(objProto);
+				</b>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>How can we clone an object (deep cloning)?</summary>
+				<b>
+					1. let objClone = JSON.parse(JSON.stringify(objSource));<br>
+					2. Custom method https://github.com/SergeyKhrapin/deep-object-cloning
 				</b>
 			</details>
 		</li>

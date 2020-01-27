@@ -22,19 +22,22 @@
 .questions-list li {
 	margin-bottom: 20px;
     padding: 20px;
-    background-color: lightblue;
-    border-radius: 6px;
+    background-color: #ccd4d7;
+	border-radius: 6px;
+	font-size: 18px;
 }
 .questions-list summary {
 	margin-bottom: 10px;
-	font-size: 18px;
 }
 .questions-list pre {
 	font-size: 14px;
 	color: blue;
+	letter-spacing: 0.6px;
 }
 .questions-list b {
-	color: green;
+	font-weight: normal;
+	color: #06a729;
+	letter-spacing: 0.6px;
 }
 .caution {
 	color: red;
